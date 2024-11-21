@@ -1,31 +1,68 @@
 .container {
-  height: 100vh;
-  width: 6%;
-  max-width: 6rem;
-  display: flex;
-
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 0rem;
-  background: rgb(20, 20, 20);
-}
-
-.logo{
+    height: 100vh;
+    width: 20%;
+    /* max-width: 90rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0rem;
+    background: #3f4d67;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+    /* transition: width 0.3s ease, max-width 0.3s ease; Smooth transition for width */
+  }
+  
+  /* .container:hover { */
+    /* width: 15%; Expand sidebar on hover */
+    /* max-width: 15rem; Expand max-width for more space */
+  /* } */
+  
+  .logo {
     width: 45%;
     max-width: 5rem;
-}
-
-
-
-.menu{
-    margin-top: 4rem;
+    margin-bottom: 2rem; /* Space between logo and menu */
+    transition: width 0.3s ease; /* Smooth transition for logo */
+  }
+  
+  .menu {
+    margin-top: 2rem; /* Adjusted spacing from top */
     display: flex;
-
     flex-direction: column;
-    gap: 5rem;
-}
-
-.item>svg{
+    gap: 2.5rem; /* Reduced gap between items */
+    align-items: center; /* Center the items */
+  }
+  
+  .item {
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Added gap between text and icon */
+    text-decoration: none;
+    padding: 0.8rem 1rem; /* Padding for better touch target */
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
+  }
+  
+  .item:hover {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect on item */
+    transform: scale(1.05); /* Slight scale effect */
+  }
+  
+  .item > svg {
     fill: white;
-    width: 3rem;
-}
+    width: 2.2rem; /* Reduced icon size for better alignment */
+    transition: transform 0.2s ease; /* Smooth icon scaling */
+  }
+  
+  .item:hover > svg {
+    transform: scale(1.2); /* Slight scale effect on icon */
+  }
+  
+  .item.active {
+    background: rgba(255, 255, 255, 0.2); /* Active item background */
+  }
+  
+  .item.active > svg {
+    fill: #04a9f5; /* Active icon color */
+  }
+  

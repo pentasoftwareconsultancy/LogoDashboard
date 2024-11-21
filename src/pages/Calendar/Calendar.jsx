@@ -21,7 +21,6 @@ const Calendar = () => {
 
         calendarApi.unselect();
 
-
         if (title) {
             calendarApi.addEvent({
                 id: createEventId(),
@@ -34,43 +33,36 @@ const Calendar = () => {
     }
 
     const handleEventClick = (clickInfo) => {
-        if (
-            confirm('Are you sure you want to delete this event?')
-
-        ) {
+        if (confirm('Are you sure you want to delete this event?')) {
             clickInfo.event.remove()
         }
     }
 
     return (
         <div className="calendar-container">
-
-            <div>
-                <FullCalendar
-                    plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
-                    headerToolbar={{
-
-                        left: 'prev,next today',
-                        center: "title",
-                        right: "dayGridMonth,timeGridWeek,timeGridDay"
-
-                    }}
-
-                    allDaySlot={false}
-                    initialView="timeGridWeek"
-                    slotDuration={"01:00:00"}
-                    editable={true}
-                    selectable={true}
-                    selectMirror={true}
-                    dayMaxEvents={true}
-                    weekends={true}
-                    nowIndicator={true}
-                    initialEvents={currentEvents}
-                    eventsSet={handleEvents}
-                    select={handleDateSelect}
-                    eventClick={handleEventClick}
-                />
-            </div>
+            <FullCalendar
+                plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
+                headerToolbar={{
+                    left: 'prev,next today',
+                    center: "title",
+                    right: "dayGridMonth,timeGridWeek,timeGridDay"
+                }}
+                allDaySlot={false}
+                initialView="timeGridWeek"
+                slotDuration={"01:00:00"}
+                editable={true}
+                selectable={true}
+                selectMirror={true}
+                dayMaxEvents={true}
+                weekends={true}
+                nowIndicator={true}
+                initialEvents={currentEvents}
+                eventsSet={handleEvents}
+                select={handleDateSelect}
+                eventClick={handleEventClick}
+                eventColor="#FF5722"
+                eventTextColor="#fff"
+            />
         </div>
     )
 }
